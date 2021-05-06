@@ -26,6 +26,7 @@ Route::get("variables", function (){
 });
 
 Route::get("arreglos", function (){
+
     $estudiantes = ["AN"=> "Ana",
                     "MA"=> "Maria",
                     "JO"=> "Jorge"
@@ -33,4 +34,34 @@ Route::get("arreglos", function (){
     echo "<pre>";
     print_r($estudiantes);
     echo "</pre>";
- });
+});
+
+Route::get( "Paises" , function() {
+    $paises = [
+         "COLOMBIA" =>[
+          "capital" => "Bogota",
+          "moneda" => "Peso",
+          "poblacion" => 50.34
+        ],
+        "PERU" =>[
+            "Capital" => "Lima",
+            "Moneda" => "SOL",
+            "Poblacion" => 32.84
+          ],
+        "PARAGUAY" =>[
+            "Capital" => "Asuncion",
+            "Moneda" => "Guarani",
+            "Poblacion" => 70.34
+          ],
+
+        ];
+        foreach ($paises as $nombrepais=> $pais){
+            echo "<h1>$nombrepais</h1>";
+            echo "<pre>";
+            echo ($pais["capital"]);
+            echo ($pais["moneda"]);
+            echo "</pre>";
+
+        }
+
+    });
